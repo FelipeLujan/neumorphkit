@@ -1,0 +1,41 @@
+{
+	"name": "spring-button-test",
+	"version": "1.0.5",
+	"description": "",
+	"main": "lib/index.js",
+	"scripts": {
+		"start": "styleguidist server",
+		"test": "jest",
+		"rollup:build": "rollup -c",
+		"prepublishOnly": "rm -rf lib && npm run rollup:build",
+		"postbuild": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.9.6",
+		"@babel/preset-env": "^7.9.6",
+		"@babel/preset-react": "^7.9.4",
+		"@testing-library/react": "^10.0.4",
+		"babel-loader": "^8.1.0",
+		"babel-plugin-styled-components": "^1.10.7",
+		"jest": "^26.0.1",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-spring": "^8.0.27",
+		"react-styleguidist": "^11.0.6",
+		"rollup": "^2.9.1",
+		"rollup-plugin-babel": "^4.4.0",
+		"rollup-plugin-commonjs": "^10.1.0",
+		"rollup-plugin-node-resolve": "^5.2.0",
+		"rollup-plugin-peer-deps-external": "^2.2.2",
+		"styled-components": "^5.1.0",
+		"webpack": "^4.43.0"
+	},
+	"peerDependencies": {
+		"react": "^16.x",
+		"react-dom": "^16.x",
+		"styled-components": "^5.x",
+		"react-spring": "^8.x"
+	}
+}
