@@ -1,6 +1,6 @@
 {
 	"name": "spring-button-test",
-	"version": "1.0.5",
+	"version": "1.0.7",
 	"description": "",
 	"main": "lib/index.js",
 	"scripts": {
@@ -29,6 +29,7 @@
 		"rollup-plugin-commonjs": "^10.1.0",
 		"rollup-plugin-node-resolve": "^5.2.0",
 		"rollup-plugin-peer-deps-external": "^2.2.2",
+		"rollup-plugin-uglify": "^6.0.4",
 		"styled-components": "^5.1.0",
 		"webpack": "^4.43.0"
 	},
