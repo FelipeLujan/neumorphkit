@@ -1,8 +1,8 @@
-import React from 'react'
-import { useSpring, animated } from 'react-spring'
-import styled from 'styled-components'
-import theme from '../theme/theme'
-import pSBC from '../utils/pSBC'
+import React from 'react';
+import styled from 'styled-components';
+import { useSpring, animated } from 'react-spring';
+import theme from '../theme/theme';
+import pSBC from '../utils/pSBC';
 
 const BTN = styled(animated.button)`
   min-width: 150px;
@@ -15,7 +15,7 @@ const BTN = styled(animated.button)`
   outline: none;
   border: 0;
   color: ${({ color }) => color || theme.light.contrast};
-`
+`;
 
 const ButtonComponent = ({
   children,
@@ -23,7 +23,7 @@ const ButtonComponent = ({
   styles,
   color,
   handleMouseDown,
-  handleMouseUp
+  handleMouseUp,
 }) => {
   return (
     <BTN
@@ -35,46 +35,46 @@ const ButtonComponent = ({
     >
       {children}
     </BTN>
-  )
-}
-
-const ButtonExport = ({ active, handleClick, children, color }) => {
-  const pulled = {
-    boxShadow: theme.pulled,
-    backgroundImage: `linear-gradient(
+  );
+};
+const pulled = {
+  boxShadow: theme.pulled,
+  backgroundImage: `linear-gradient(
 			150deg,
 			${(0, theme.light.main)},
 			${(0, theme.light.main)}
-		  )`
-  }
-  const pressed = {
-    boxShadow: theme.pushed,
-    backgroundImage: `linear-gradient(
+		  )`,
+};
+const pressed = {
+  boxShadow: theme.pushed,
+  backgroundImage: `linear-gradient(
 			150deg,
 			${(-0.1, theme.light.main)},
 			${(0.1, theme.light.main)}
-		  )`
-  }
-  const pressedFull = {
-    boxShadow: theme.flat,
-    backgroundImage: `linear-gradient(
-			150deg,
-			${(-0.1, theme.light.main)},
-			${(0.1, theme.light.main)}
-		  )`
-  }
-  const [styles, set] = useSpring(() => ({
-    from: active ? pressed : pulled,
-    config: { tension: 170, friction: 15, precision: 0.1 }
-  }))
+		  )`,
+};
 
+const pressedFull = {
+  // comment
+  boxShadow: theme.flat,
+  backgroundImage: `linear-gradient(
+			150deg,
+			${(-0.1, theme.light.main)},
+			${(0.1, theme.light.main)} 
+		  )`,
+};
+const ButtonExport = ({ active, handleClick, children, color }) => {
   const handleMouseDown = () => {
-    if (!active) set(pressedFull)
-  }
+    if (!active) set(pressedFull);
+  };
 
   const handleMouseUp = () => {
-    if (!active) set(pulled)
-  }
+    if (!active) set(pulled);
+  };
+  const [styles, set] = useSpring(() => ({
+    from: active ? pressed : pulled,
+    config: { tension: 170, friction: 15, precision: 0.1 },
+  }));
 
   return (
     <ButtonComponent
@@ -87,7 +87,7 @@ const ButtonExport = ({ active, handleClick, children, color }) => {
     >
       {children}
     </ButtonComponent>
-  )
-}
+  );
+};
 
-export default ButtonExport
+export default ButtonExport;
