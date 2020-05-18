@@ -3,5 +3,11 @@ A very simple button.
 ```jsx
 import ButtonExport from './Button';
 
-<ButtonExport>some text</ButtonExport>;
+<ButtonExport
+  handleClick={() => {
+    console.log('Felipe');
+  }}
+>
+  some text
+</ButtonExport>;
 ```

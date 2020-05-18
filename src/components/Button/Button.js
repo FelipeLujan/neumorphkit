@@ -32,6 +32,11 @@ const ButtonComponent = ({
       onClick={handleClick}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
+      onTouchStart={handleMouseDown}
+      onTouchEnd={() => {
+        handleMouseUp();
+      }}
+      onTouchCancel={handleMouseUp}
     >
       {children}
     </BTN>

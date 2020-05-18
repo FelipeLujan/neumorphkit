@@ -59,6 +59,7 @@ export default [
           'react-dom': Object.keys(reactDom),
         },
       }),
+      terser(),
     ],
   },
 ];
