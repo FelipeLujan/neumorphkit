@@ -107,7 +107,11 @@ const BinaryExport = ({ options, handleClick, title }) => {
   const pushed = {
     boxShadow: theme.pushed,
     border: `0px solid ${pSBC(-0.2, theme.light.main)}`,
-    backgroundImage: theme.backgroundImage,
+    backgroundImage: `linear-gradient(
+      150deg,
+      ${pSBC(-0.1, theme.light.main)},
+      ${pSBC(0.15, theme.light.main)}
+      )`,
   };
   const [springA, setA] = useSpring((index) => ({
     from: flat,

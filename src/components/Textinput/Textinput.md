@@ -4,7 +4,7 @@ A very simple button.
 import Surface from '../Surface/Surface';
 import { useState } from 'react';
 
-import Textinput from './TextInput';
+import Textinput from './Textinput';
 const [value, setValue] = useState('');
 const handleChange = (event) => {
   setValue(event.target.value);

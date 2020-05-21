@@ -45,28 +45,28 @@ const ButtonComponent = ({
 const pulled = {
   boxShadow: theme.pulled,
   backgroundImage: `linear-gradient(
-			150deg,
-			${(0, theme.light.main)},
-			${(0, theme.light.main)}
-		  )`,
+    150deg,
+    ${pSBC(0.1, theme.light.main)},
+    ${pSBC(-0.05, theme.light.main)}
+    )`,
 };
 const pressed = {
   boxShadow: theme.pushed,
   backgroundImage: `linear-gradient(
-			150deg,
-			${(-0.1, theme.light.main)},
-			${(0.1, theme.light.main)}
-		  )`,
+    150deg,
+    ${pSBC(-0.15, theme.light.main)},
+    ${pSBC(+0.1, theme.light.main)}
+    )`,
 };
 
 const pressedFull = {
   // comment
   boxShadow: theme.flat,
   backgroundImage: `linear-gradient(
-			150deg,
-			${(-0.1, theme.light.main)},
-			${(0.1, theme.light.main)} 
-		  )`,
+    150deg,
+    ${pSBC(-0.1, theme.light.main)},
+    ${pSBC(+0.1, theme.light.main)}
+    )`,
 };
 const ButtonExport = ({ active, handleClick, children, color }) => {
   const handleMouseDown = () => {

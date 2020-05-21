@@ -11,9 +11,9 @@ const theme = {
     -0.15,
     light.main
   )} -1px -1px 1px 0px inset, ${pSBC(
-    0.3,
+    0.8,
     light.main
-  )} -2px -2px 4px 1px, ${pSBC(-0.3, light.main)} 2px 4px 6px 1px`,
+  )} -2px -2px 5px 1px, ${pSBC(-0.3, light.main)} 2px 4px 6px 1px`,
 
   pressed: ` ${pSBC(0.1, light.main)} 1px 1px 1px 0px inset, ${pSBC(
     -0.3,
@@ -23,7 +23,7 @@ const theme = {
     light.main
   )} -2px -2px 2px 1px, ${pSBC(-0.3, light.main)} 2px 2px 2px 1px`,
   pushed: `${pSBC(-0.4, light.main)}  3px 3px 3px 0px inset,${pSBC(
-    0.6,
+    0.9,
     light.main
   )}  -1px -1px 2px 0px inset, ${pSBC(
     -0.05,

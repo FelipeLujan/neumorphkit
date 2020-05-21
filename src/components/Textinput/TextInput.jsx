@@ -1,8 +1,8 @@
-import React from 'react'
-import { useSpring, animated, config } from 'react-spring'
-import styled, { withTheme } from 'styled-components'
-import theme from '../theme/theme'
-import pSBC from '../utils/pSBC'
+import React from 'react';
+import { useSpring, animated, config } from 'react-spring';
+import styled, { withTheme } from 'styled-components';
+import theme from '../theme/theme';
+import pSBC from '../utils/pSBC';
 
 const INP = styled(animated.input)`
   min-width: 150px;
@@ -14,44 +14,48 @@ const INP = styled(animated.input)`
   box-sizing: border-box;
   box-shadow: ${theme.pushed};
   border: 0;
-  background-image: ${theme.backgroundImage};
+  background-image: linear-gradient(
+    150deg,
+    ${pSBC(-0.1, theme.light.main)},
+    ${pSBC(0.15, theme.light.main)}
+  );
   color: ${theme.light.contrast};
 
   ::placeholder {
     color: ${pSBC(0.4, theme.light.contrast)};
   }
-`
-const TextInput = ({ theme, name, value, handleChange, placeholderText }) => {
+`;
+const Textinput = ({ theme, name, value, handleChange, placeholderText }) => {
   const init = {
-    borderRadius: '25px'
-  }
+    borderRadius: '25px',
+  };
 
   const [styles] = useSpring(() => ({
     from: init,
     config: config.wobbly,
-    precision: 0.1
-  }))
+    precision: 0.1,
+  }));
 
   return (
     <INP
       style={styles}
       placeholder={placeholderText}
-      type='text'
+      type="text"
       value={value}
       onChange={handleChange}
-      name='text'
+      name="text"
       theme={theme}
     ></INP>
-  )
-}
-const TextInputExport = ({ value, handleChange, placeholderText }) => {
+  );
+};
+const TextinputExport = ({ value, handleChange, placeholderText }) => {
   return (
-    <TextInput
+    <Textinput
       handleChange={handleChange}
       value={value}
       placeholderText={placeholderText}
-    ></TextInput>
-  )
-}
+    ></Textinput>
+  );
+};
 
-export default TextInputExport
+export default TextinputExport;
