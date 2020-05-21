@@ -1,5 +1,5 @@
 const vars = {
-	light: { main: '#E5EEFC', secondary: '', contrast: '#000000' },
-	dark: { main: '', secondary: '', contrast: '' },
+  light: { main: '#E5EEFD', secondary: '', contrast: '#636363' },
+  dark: { main: '', secondary: '', contrast: '' },
 };
 export default vars;

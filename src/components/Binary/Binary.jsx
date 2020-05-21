@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import { useSpring, animated, config } from 'react-spring'
-import styled from 'styled-components'
-import theme from '../theme/theme'
-import pSBC from '../utils/pSBC'
+import React, { useState } from 'react';
+import { useSpring, animated, config } from 'react-spring';
+import styled from 'styled-components';
+import theme from '../theme/theme';
+import pSBC from '../utils/pSBC';
 
 const CTRL = styled(animated.button)`
   margin: 5px;
@@ -20,11 +20,11 @@ const CTRL = styled(animated.button)`
   align-items: center;
   align-content: center;
 
-  color: ${theme.light.contrast};
   cursor: pointer;
   overflow: hidden;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-`
+  color: ${theme.light.contrast};
+`;
 
 const Container = styled(animated.div)`
   /* padding: 5px 0 5px 5px; */
@@ -45,7 +45,8 @@ const Container = styled(animated.div)`
   label {
     margin: 10px 0;
   }
-`
+  color: ${theme.light.contrast};
+`;
 
 const ControlWrapper = styled.div`
   display: flex;
@@ -54,7 +55,7 @@ const ControlWrapper = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
-`
+`;
 
 const Options = ({
   handleClick,
@@ -63,23 +64,23 @@ const Options = ({
   springB,
   setB,
   options,
-  title
+  title,
 }) => {
   return (
     <Container>
-      <label htmlFor='title'>
+      <label htmlFor="title">
         <span>{title}</span>
       </label>
       <ControlWrapper>
         <CTRL
-          role='button'
+          role="button"
           onClick={() => handleClick(options[0])}
           style={springA}
         >
           {options[0]}
         </CTRL>
         <CTRL
-          role='button'
+          role="button"
           onClick={() => handleClick(options[1])}
           style={springB}
         >
@@ -87,49 +88,49 @@ const Options = ({
         </CTRL>
       </ControlWrapper>
     </Container>
-  )
-}
+  );
+};
 const BinaryExport = ({ options, handleClick, title }) => {
-  const [active, setActive] = useState(undefined)
-  let populatedOptions = ['', '']
+  const [active, setActive] = useState(undefined);
+  let populatedOptions = ['', ''];
 
   const flat = {
     boxShadow: theme.flatDown,
     // filter: theme.filer_flat,
-    border: `1px solid ${pSBC(-0.2, theme.light.main)}`,
+    border: `1px solid ${pSBC(-0.3, theme.light.main)}`,
     backgroundImage: `linear-gradient(
 			150deg,
 			${theme.light.main},
 			${theme.light.main}
-		  )`
-  }
+		  )`,
+  };
   const pushed = {
     boxShadow: theme.pushed,
     border: `0px solid ${pSBC(-0.2, theme.light.main)}`,
-    backgroundImage: theme.backgroundImage
-  }
+    backgroundImage: theme.backgroundImage,
+  };
   const [springA, setA] = useSpring((index) => ({
     from: flat,
-    config: { ...config.stiff, precision: 0.1 }
-  }))
+    config: { ...config.stiff, precision: 0.1 },
+  }));
   const [springB, setB] = useSpring((index) => ({
     from: flat,
-    config: { ...config.stiff, precision: 0.1 }
-  }))
+    config: { ...config.stiff, precision: 0.1 },
+  }));
 
   const handleState = (option) => {
-    let newValue = undefined
+    let newValue = undefined;
     if (active === option) {
-      setActive(undefined)
-      newValue = undefined
+      setActive(undefined);
+      newValue = undefined;
     } else {
-      setActive(option)
-      newValue = option
+      setActive(option);
+      newValue = option;
     }
     if (!option) {
-      handleClick(null)
+      handleClick(null);
     }
-  }
+  };
 
   // TODO: make the followinf IF statement actually validate that each of the items passed under the "options" prop are strings
   if (Array.isArray(options) && options.length === 2) {
@@ -138,21 +139,21 @@ const BinaryExport = ({ options, handleClick, title }) => {
         typeof options[index] === 'string' ||
         options[index] instanceof String
       ) {
-        variable = options[index]
-        return variable
+        variable = options[index];
+        return variable;
       }
-    })
+    });
   }
-  populatedOptions = options
+  populatedOptions = options;
   if (active === populatedOptions[0]) {
-    setA(pushed)
-    setB(flat)
+    setA(pushed);
+    setB(flat);
   } else if (active === populatedOptions[1]) {
-    setA(flat)
-    setB(pushed)
+    setA(flat);
+    setB(pushed);
   } else {
-    setA(flat)
-    setB(flat)
+    setA(flat);
+    setB(flat);
   }
   return (
     <Options
@@ -164,6 +165,6 @@ const BinaryExport = ({ options, handleClick, title }) => {
       options={populatedOptions}
       title={title}
     ></Options>
-  )
-}
-export default BinaryExport
+  );
+};
+export default BinaryExport;

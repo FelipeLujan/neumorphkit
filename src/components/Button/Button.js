@@ -14,7 +14,7 @@ const BTN = styled(animated.button)`
   box-sizing: border-box;
   outline: none;
   border: 0;
-  color: ${({ color }) => color || theme.light.contrast};
+  color: ${theme.light.contrast};
 `;
 
 const ButtonComponent = ({

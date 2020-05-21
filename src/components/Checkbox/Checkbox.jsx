@@ -27,6 +27,7 @@ const LabelContainer = styled.label`
     display: table-cell;
     vertical-align: center;
   }
+  color: ${theme.light.contrast};
 `;
 
 const Icon = styled(animated.svg)`
@@ -68,29 +69,19 @@ export const CheckboxExport = ({
     boxShadow: theme.pushed,
     backgroundImage: `linear-gradient(
 			150deg,
-			${theme.light.main},
-			${theme.light.main}
+      ${pSBC(-0.15, theme.light.main)},
+			${pSBC(+0.1, theme.light.main)}
 		  )`,
     opacity: 0,
-    border: `1px solid ${pSBC(-0.4, theme.light.main)}`,
-  };
-  const flat = {
-    boxShadow: theme.flat,
-    backgroundImage: `linear-gradient(
-			150deg,
-			${theme.light.main},
-			${theme.light.main}
-		  )`,
-    opacity: 0,
-    border: `1px solid ${pSBC(-0.4, theme.light.main)}`,
+    border: `0px solid ${pSBC(-0.4, theme.light.main)}`,
   };
 
   const pulled = {
-    boxShadow: theme.checkboxUp,
+    boxShadow: theme.pulled,
     backgroundImage: `linear-gradient(
 			150deg,
-			${pSBC(-0.1, theme.light.main)},
-			${pSBC(+0.05, theme.light.main)}
+			${pSBC(0.1, theme.light.main)},
+			${pSBC(-0.05, theme.light.main)}
 		  )`,
     opacity: 1,
     border: `0px solid ${pSBC(-0.2, theme.light.main)}`,
@@ -132,7 +123,7 @@ export const CheckboxExport = ({
         className="hello"
       >
         <Icon style={springB} viewBox="0 0 24 24">
-          <polyline points="20 6 9 17 4 12" />
+          <polyline points="20 6 9 17 4 12" stroke={theme.light.contrast} />
         </Icon>
       </StyledCheckbox>
       <span>{label}</span>

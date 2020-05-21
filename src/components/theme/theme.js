@@ -1,7 +1,7 @@
-import vars from './vars'
-import pSBC from '../utils/pSBC'
+import vars from './vars';
+import pSBC from '../utils/pSBC';
 
-const { light } = vars
+const { light } = vars;
 
 const theme = {
   light: { ...light },
@@ -11,9 +11,9 @@ const theme = {
     -0.15,
     light.main
   )} -1px -1px 1px 0px inset, ${pSBC(
-    0.6,
+    0.3,
     light.main
-  )} -2px -2px 5px 1px, ${pSBC(-0.3, light.main)} 2px 4px 6px 1px`,
+  )} -2px -2px 4px 1px, ${pSBC(-0.3, light.main)} 2px 4px 6px 1px`,
 
   pressed: ` ${pSBC(0.1, light.main)} 1px 1px 1px 0px inset, ${pSBC(
     -0.3,
@@ -55,7 +55,7 @@ const theme = {
   )} -3px -4px 4px 2px inset, ${pSBC(
     0.2,
     light.main
-  )} -2px -2px 3px 1px, ${pSBC(-0.3, light.main)} 2px 1px 4px 2px`
-}
+  )} -2px -2px 3px 1px, ${pSBC(-0.3, light.main)} 2px 1px 4px 2px`,
+};
 
-export default theme
+export default theme;

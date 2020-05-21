@@ -28,6 +28,7 @@ const LabelContainer = styled.label`
     display: table-cell;
     vertical-align: center;
   }
+  color: ${theme.light.contrast};
 `;
 
 const Icon = styled(animated.svg)`
@@ -64,6 +65,16 @@ export const RadioExport = ({
   handleChange,
   ...props
 }) => {
+  const pushed = {
+    boxShadow: theme.pushed,
+    backgroundImage: `linear-gradient(
+			150deg,
+      ${pSBC(-0.15, theme.light.main)},
+			${pSBC(+0.1, theme.light.main)}
+		  )`,
+    opacity: 0,
+    border: `0px solid ${pSBC(-0.4, theme.light.main)}`,
+  };
   const flat = {
     boxShadow: theme.flat,
     backgroundImage: `linear-gradient(
@@ -76,17 +87,17 @@ export const RadioExport = ({
   };
 
   const pulled = {
-    boxShadow: theme.checkboxUp,
+    boxShadow: theme.pulled,
     backgroundImage: `linear-gradient(
 			150deg,
-			${pSBC(-0.05, theme.light.main)},
-			${pSBC(+0.05, theme.light.main)}
+			${pSBC(0.1, theme.light.main)},
+			${pSBC(-0.05, theme.light.main)}
 		  )`,
     opacity: 1,
     border: `0px solid ${pSBC(-0.2, theme.light.main)}`,
   };
   const [springA, setA] = useSpring((index) => ({
-    from: checked ? pulled : flat,
+    from: checked ? pulled : pushed,
     config: { ...config.wobbly, precision: 0.1 },
   }));
 
@@ -108,7 +119,7 @@ export const RadioExport = ({
     setA(pulled);
     setB({ opacity: 1 });
   } else {
-    setA(flat);
+    setA(pushed);
     setB({ opacity: 0 });
   }
 
@@ -131,7 +142,13 @@ export const RadioExport = ({
         name={value}
       >
         <Icon theme={theme} style={springB} viewBox="0 0 24 24">
-          <polyline points="20 6 9 17 4 12" />
+          <circle
+            cx="12"
+            cy="12"
+            r="3"
+            stroke={pSBC(0.0, theme.light.contrast)}
+            fill={pSBC(0.0, theme.light.contrast)}
+          />
         </Icon>
       </StyledCheckbox>
       <span>{value}</span>

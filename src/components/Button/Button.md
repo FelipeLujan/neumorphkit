@@ -1,13 +1,16 @@
 A very simple button.
 
 ```jsx
-import ButtonExport from './Button';
+import Surface from '../Surface/Surface';
 
-<ButtonExport
-  handleClick={() => {
-    console.log('Felipe');
-  }}
->
-  some text
-</ButtonExport>;
+import ButtonExport from './Button';
+<Surface width={300} height={60}>
+  <ButtonExport
+    handleClick={() => {
+      console.log('Felipe');
+    }}
+  >
+    some text
+  </ButtonExport>
+</Surface>;
 ```
