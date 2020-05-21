@@ -1,5 +1,7 @@
 # neumorphkit
 
+[![NPM](https://img.shields.io/npm/v/neumorphkit.svg)](https://www.npmjs.com/package/neumorphkit) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 > Neumorphkit is a set of React Components inspired in neumorphic design (soft UI).
 
 Check out this DEMO
@@ -14,8 +16,6 @@ The available components include.
 - Neumorphic Radios
 - Neumorphic Checkboxes
 
-[![NPM](https://img.shields.io/npm/v/neumorphkit.svg)](https://www.npmjs.com/package/neumorphkit) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-
 ## Install
 
 ```bash
@@ -25,17 +25,17 @@ npm install --save neumorphkit
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import { Button } from 'neumorphkit'
+import { Button } from 'neumorphkit';
 
 const handleClick = () => {
-  console.log('hi')
-}
+  console.log('hi');
+};
 
 const Example = () => {
-  return <Button handleClick={handleClick}>Click me</Button>
-}
+  return <Button handleClick={handleClick}>Click me</Button>;
+};
 ```
 
 ## Components
