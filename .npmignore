@@ -1,2 +1,6 @@
 example
 node_modules
+.babelrc
+.gitignore
+.styleguide.config.js
+.rollup.config.js

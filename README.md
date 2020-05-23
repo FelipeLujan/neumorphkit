@@ -1,10 +1,10 @@
-# neumorphkit
+# [Neumorphkit. 🕳](https://neu.felipelujan.com)
 
 [![NPM](https://img.shields.io/npm/v/neumorphkit.svg)](https://www.npmjs.com/package/neumorphkit) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-> Neumorphkit is a set of React Components inspired in neumorphic design (soft UI).
+> Neumorphkit is a set of beautiful React components themed after Neumorphic design (Soft Ui) animated with react-spring.
 
-Check out this DEMO
+Check out this [DEMO](https://neu.felipelujan.com).
 
 The components are fairy-dusted with React-Spring making them look and feel even more... neumorphic.
 
