@@ -5,6 +5,7 @@
 > Neumorphkit is a set of beautiful React components themed after Neumorphic design (Soft Ui) animated with react-spring.
 
 Check out this [DEMO](https://neu.felipelujan.com).
+Demo repo [repo](https://github.com/FelipeLujan/neumorphkit-example).
 
 The components are fairy-dusted with React-Spring making them look and feel even more... neumorphic.
 
